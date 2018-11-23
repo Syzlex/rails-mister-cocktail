@@ -1,0 +1,9 @@
+<h2>Show Page</h2>
+
+<h3 style="solid"><%= @cocktail.name %></h3>
+<%= cl_image_tag @cocktail.photo, :effect=>"art:athena", height: 300, width: 400, crop: :fill %>
+
+<br>
+<%= link_to "Back to Cocktails", root_path %>
+<br>
+<%= link_to 'Remove Cocktail', @cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>

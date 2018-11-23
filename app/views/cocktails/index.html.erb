@@ -1,13 +1,25 @@
-<h1>Find the perfect cocktail</h1>
+<h1>
+  <span id="banner-typed-text"></span>
+</h1>
 
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-
-  <li><%= cocktail.name %></li>
-<% end %>
-</ul>
+<div class='container'>
+  <div class='row'>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4 drink-style">
+      <div class="drink-image">
+        <%= link_to (cl_image_tag cocktail.photo, :effect=>"art:athena", height: 200, width: 300, crop: :fill), cocktail %>
+      </div>
+      <div class="drink-name">
+        <%= cocktail.name%>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <br>
 
 <%= link_to "Submit a new cocktail", new_cocktail_path %>
+
+
